@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>User_Reg</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+
+
+    .end {
+
+      text-align: center;
+
+      color: black;
+
+      background-color: #66BFBF;
+    }
+
+    body {
+
+      margin: 0px;
+
+      padding: 0px;
+
+
+
+      font-family: 'Merriweather', serif;
+    }
+
+
+    .box {
+
+      background-image: url(img/img4.webp);
+
+      background-size: cover;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-direction: column;
+
+      width: 100%;
+
+      text-align: center;
+
+      height: 500px;
+
+      box-shadow: 0px 0px 10px 2px grey;
+    }
+
+    h1 {
+
+      color: white;
+
+      text-align: center;
+
+      font-size: 50px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+    .formDiv {
+
+      width: 50%;
+
+    }
+
+    h2 {
+
+      text-align: center;
+    }
+
+    .rounded2 {
+
+      border: 2px solid grey;
+      border-radius: 12px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Find Food Of Your Preferred Cuisine Near You!</h1>
+
+  </div>
+
+      <br>
+      <br>
+      <h2>Find Mess</h2>
+
+      <div class="container formDiv rounded2">
+        <br>
+        <form action="/search" method="post">
+          <div class="form-group">
+            <label for="">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="add1">Address Line 1:</label>
+            <input type="text" class="form-control" id="add1" placeholder="Address Line 1" name="add1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="add2">Address Line 2:</label>
+            <input type="text" class="form-control" id="add2" placeholder="Address Line 2" name="add2" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cui">Cuisine:</label>
+            <select name="cui" id="cui" class="form-control">
+              <option value="Maharashtrian">Maharashtrian</option>
+              <option value="Bengali">Bengali</option>
+              <option value="Andhra">Andhra</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="count">Country:</label>
+            <input type="text" class="form-control" id="coun" placeholder="Country" name="coun" required>
+          </div>
+
+          <div class="form-group">
+            <label for="stat">State:</label>
+            <input type="text" class="form-control" id="stat" placeholder="State" name="stat" required>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pinc">Pin Code:</label>
+            <input type="text" class="form-control" id="pinc" placeholder="Pin Code" name="pinc" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+
+        <br>
+        <br>
+
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+
+
+      <br>
+
+      <address class="end">
+        Published By <a href="mailto:krahul.view@gmail.com">Team Edge</a>.<br>
+        Erandwane, Pune<br>
+        India
+      </address>
+
+
+</body>
+
+</html>

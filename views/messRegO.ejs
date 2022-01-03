@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Mess_Reg</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+      table{
+          width: 100%;
+          margin: 20px 0;
+          border-collapse: collapse;
+      }
+      table, th, td{
+          border: 1px solid #cdcdcd;
+      }
+      table th, table td{
+          padding: 5px;
+          text-align: left;
+      }
+
+      #msg{
+        background-color: rgb(103, 165, 103);
+        color: black;
+        border-radius: 4px;
+        padding-left: 2px;
+      }
+      #back{
+        height: 30px;
+        width: 30px;
+      }
+  </style>
+
+  <script>
+
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var table_count = document.getElementById("tbid").rows.length;
+            console.log(table_count)
+            var named = $("#named").val();
+            var cost = $("#cost").val();
+
+            var markup = '<tr><td><input type="checkbox" name="record"></td><td><input type="text" name="dish'+table_count+'" value='+named+' readonly></td><td><input type="text" name="cost'+table_count+'" value='+cost+' readonly></td></tr>';
+
+            $("table tbody").append(markup);
+            document.getElementById("hcnt").value = table_count;
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <a href="/"><img id="back" src="https://cdn-icons-png.flaticon.com/512/318/318477.png" alt="" href="/"></a>
+    <h2>Mess Registration</h2>
+    <p id="msg"> <%=(typeof alertMsg!='undefined')? alertMsg:''%></p>
+    <form action="/register" method="post">
+      <div class="form-group">
+        <label for="">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name of the Mess" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="add1">Address Line 1:</label>
+        <input type="text" class="form-control" id="add1" placeholder="Address Line 1" name="add1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="add2">Address Line 2:</label>
+        <input type="text" class="form-control" id="add2" placeholder="Address Line 2" name="add2" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cui">Cuisine:</label>
+        <input type="text" class="form-control" id="cui" placeholder="Cuisine Speciality" name="cui" required>
+      </div>
+
+      <div class="form-group">
+        <label for="count">Country:</label>
+        <input type="text" class="form-control" id="coun" placeholder="Country" name="coun" required>
+      </div>
+
+      <div class="form-group">
+        <label for="stat">State:</label>
+        <input type="text" class="form-control" id="stat" placeholder="State" name="stat" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" id="city" placeholder="City" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="pinc">Pin Code:</label>
+        <input type="text" class="form-control" id="pinc" placeholder="Pin Code" name="pinc">
+      </div>
+
+      <br>
+
+      <div>
+          <input type="text" id="named" placeholder="Name" name="named">
+          <input type="text" id="cost" placeholder="Cost" name="cost">
+          <input type="button" class="add-row btn-info" value="Add Row">
+      </div>
+
+      <br>
+
+      <div>
+        <table id="tbid">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Name of The Dish</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button type="button" class="delete-row btn-danger">Delete Row</button>
+
+        <br>
+        <br>
+        <br>
+
+      </div>
+
+
+      <input type="submit" class="btn btn-primary">
+      <input type="text" id="hcnt" readonly style="display:None;" name = "tableCnt">
+    </form>
+
+    <br>
+    <br>
+
+    
+
+  </div>
+
+
+</body>
+
+</html>

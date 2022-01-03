@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Results</title>
+
+  <style>
+
+    .box {
+
+      background-image: url(img/img9.webp);
+
+      background-size: cover;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-direction: column;
+
+      width: 100%;
+
+      text-align: center;
+
+      height: 500px;
+
+      box-shadow: 0px 0px 10px 2px grey;
+
+    }
+
+    h4 {
+
+      color: white;
+    }
+
+    p.white {
+
+      color: white;
+    }
+
+    .end {
+
+      text-align: center;
+
+      color: black;
+
+      background-color: #66BFBF;
+
+      bottom: 0;
+
+
+    }
+
+    body {
+
+      margin: 0px;
+
+      padding: 0px;
+
+
+
+      font-family: 'Merriweather', serif;
+    }
+
+    h1 {
+
+      color: white;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    h2 {
+
+      padding-left: 10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Home Cooked Delicious Food Is Waiting For You!</h1>
+
+  </div>
+
+  <br>
+  <br>
+  <h2>Here is What We Have Found Out For You Based On Your Current Location And Preferred Choice Of Cuisine!</h2>
+
+  <div class="container">
+    <br>
+    <div class="card-columns">
+      <% for(var i=0;i<list.length && i<5;i++) {%>
+        <div class="card img-fluid" style="width:500px">
+          <img class="card-img-top" src="img/img7.jpg"  alt="Card image" style="width:100%">
+          <div class="card-img-overlay">
+            <h4 class="card-title"><%= list[i].details.name %> </h4>
+            <p class="card-text white">Authentic <%= list[i].details.cuisine %>  Food</p>
+            <p class="card-text white"><%= Math.round((list[i].distance + Number.EPSILON) * 100) / 100 %>  km distance away from current location</p>
+            <a href="/search/<%= list[i].details.mess_id %>" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <br>
+
+  <address class="end">
+    Published By <a href="mailto:krahul.view@gmail.com">Team Edge</a>.<br>
+    Erandwane, Pune<br>
+    India
+  </address>
+
+</body>
+
+</html>

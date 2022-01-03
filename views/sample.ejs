@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <button onclick="addRow()">btn</button>
+    <form action="/register" method="post">
+    <table id="tbl">
+        <tr>
+            <input type="text">
+        </tr>
+        <tr>
+            <input type="text">
+        </tr>
+        <tr>
+            <input type="text">
+        </tr>
+    </table>
+    <input type="submit" value="">
+    <input type="text" name="tableCnt" id="cnt" readonly>
+</form>
+<script>
+        function addRow(){
+            var cnt=document.getElementById("tbl").rows.length;
+            document.getElementById("cnt").value=cnt;
+        }
+    </script>
+</body>
+</html>

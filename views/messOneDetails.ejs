@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  .box {
+
+    background-image: url("https://cdn.pixabay.com/photo/2010/12/13/10/05/berries-2277_960_720.jpg");
+
+    background-size: cover;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    text-align: center;
+
+    height: 500px;
+
+    box-shadow: 0px 0px 10px 2px grey;
+
+  }
+
+  body {
+
+    margin: 0px;
+
+    padding: 0px;
+
+    font-family: 'Merriweather', serif;
+  }
+
+  .end {
+
+    text-align: center;
+
+    color: black;
+
+    background-color: #66BFBF;
+
+    bottom: 0;
+
+
+  }
+
+  h2 {
+
+    text-align: center;
+
+    text-decoration: underline;
+
+  }
+
+  h4 {
+
+    text-align: center;
+  }
+
+  .formDiv {
+
+    width: 50%;
+  }
+
+  .rounded2 {
+
+    border: 2px solid yellow;
+    border-radius: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+
+  }
+
+  .center {
+
+    text-align: center;
+  }
+
+</style>
+
+<body>
+
+  <div class="box">
+
+
+  </div>
+
+  <h2><%= details[0].name %></h2>
+  <br>
+  <h4><strong>Take A Look At Our Menu.</strong></h4>
+  <br>
+
+  <div class="container formDiv rounded2">
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name of the Dish</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0;i<list.length;i++){ %>
+          <tr>
+            <td><%= list[i].menuname %> </td>
+            <td><%= list[i].costofment %> </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <div class="alert alert-info center">
+     <strong>For further details please contact us at</strong> <%= details[0].mobileno %>  <strong>Thank You!</strong>
+ </div>
+
+  <br>
+  <br>
+  <br>
+
+  <br>
+
+  <address class="end">
+    Published By <a href="mailto:krahul.view@gmail.com">Team Edge</a>.<br>
+    Erandwane, Pune<br>
+    India
+  </address>
+
+</body>
+
+</html>
